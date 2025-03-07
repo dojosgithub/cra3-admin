@@ -1,0 +1,60 @@
+# Node.js
+node_modules/
+dist/
+build/
+
+# Vite and TypeScript outputs
+.vite/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# AWS credentials and config
+.aws/credentials
+.aws/config
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+pnpm-error.log*
+
+# Dependency directories
+.DS_Store
+
+# Build outputs
+.cache/
+coverage/
+out/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*.orig
+
+# Large files
+*.patch
+*.zip
+*.tar.gz
+*.tgz
+
+# Git LFS (for large files, uncomment if using)
+# *.psd
+# *.png
+# *.jpg
+# *.mp4
+
+# Backup files
+index_backup.html
