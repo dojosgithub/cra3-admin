@@ -4,8 +4,8 @@
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
+    "skipLibCheck": true, // Set to true to skip library checks (reduces build time)
+    "esModuleInterop": true, // Enable ES module interop
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -24,8 +24,10 @@
       "@hocs": ["src/hocs/index.ts"],
       "@hooks": ["src/hooks/index.ts"],
       "@utils": ["src/utils/index.ts"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"] // Add custom type definitions
   },
   "include": ["src"],
+  "exclude": ["node_modules", "dist", "build"], // Exclude unnecessary directories
   "references": [{ "path": "./tsconfig.node.json" }]
 }
