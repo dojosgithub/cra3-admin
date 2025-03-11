@@ -1,7 +1,5 @@
 import data from '@emoji-mart/data';
-import { BaseEmoji, PickerProps } from 'emoji-mart';
-
-import { Picker, Data } from 'emoji-mart';
+import { Picker, BaseEmoji, PickerProps, Data } from 'emoji-mart';
 import { useEffect, useRef, useState } from 'react';
 // @mui
 import { useTheme, hexToRgb, Theme } from '@mui/material/styles';

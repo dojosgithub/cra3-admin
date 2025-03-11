@@ -1,37 +1,32 @@
-import dotenv from 'dotenv';
-
-// Load environment variables from .env file
-dotenv.config();
-
 // i18n
-import './locales/i18n';
+import './locales/i18n'
 // highlight
-import './utils/highlight';
+import './utils/highlight'
 // scroll bar
-import 'simplebar/src/simplebar.css';
+import 'simplebar/src/simplebar.css'
 // lightbox
-import 'react-image-lightbox/style.css';
+import 'react-image-lightbox/style.css'
 // editor
-import 'react-quill/dist/quill.snow.css';
+import 'react-quill/dist/quill.snow.css'
 // slick-carousel
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 // lazy image
-import 'react-lazy-load-image-component/src/effects/blur.css';
-import 'react-lazy-load-image-component/src/effects/opacity.css';
-import 'react-lazy-load-image-component/src/effects/black-and-white.css';
-import './index.css';
-import './libs/axios/init';
-import './libs/mobx/init';
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import 'react-lazy-load-image-component/src/effects/opacity.css'
+import 'react-lazy-load-image-component/src/effects/black-and-white.css'
+import './index.css'
+import './libs/axios/init'
+import './libs/mobx/init'
 
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import { CollapseDrawerProvider } from './contexts/CollapseDrawerContext';
-import NotistackProvider from './ui/components/NotistackProvider';
-import ReactDOM from 'react-dom';
-import { RootStoreProvider } from './stores';
-import { SWRConfig } from 'swr';
-import { SettingsProvider } from './contexts/SettingsContext';
+import App from './App'
+import { BrowserRouter } from 'react-router-dom'
+import { CollapseDrawerProvider } from './contexts/CollapseDrawerContext'
+import NotistackProvider from './ui/components/NotistackProvider'
+import ReactDOM from 'react-dom'
+import { RootStoreProvider } from './stores'
+import { SWRConfig } from 'swr'
+import { SettingsProvider } from './contexts/SettingsContext'
 
 // import './libs/react-pdf/init'
 ReactDOM.render(
@@ -47,4 +42,4 @@ ReactDOM.render(
     </SWRConfig>
   </RootStoreProvider>,
   document.getElementById('root')
-);
+)

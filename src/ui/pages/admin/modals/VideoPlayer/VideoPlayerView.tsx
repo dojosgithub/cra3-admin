@@ -1,49 +1,53 @@
-import { observer } from 'mobx-react';
-import { Note, Spacer, Typography } from 'src/ui/core/components';
-import { Box, Grid, Button, ButtonBase } from '@mui/material';
-import { useEffect, useRef } from 'react';
-import { useRootStore } from 'src/stores';
-import _Bookmarks from '../../Bookmarks/Bookmarks';
-import ToggleButtons from 'src/ui/core/components/mui/inputs/ToggleButtons/ToggleButtons';
-import Footer from 'src/ui/core/components/Footer/Footer';
-import { action } from 'mobx';
-import moment from 'moment';
-import uniqid from 'uniqid';
-import { useRTCViewer } from 'src/hooks/useRTCViewer';
-import Timestamp from 'src/ui/core/components/cells/CellTimestamp/CellTimestamp';
+import { observer } from 'mobx-react'
+import { Note, Spacer, Typography } from 'src/ui/core/components'
+import { Box, Grid, Button, ButtonBase } from '@mui/material'
+import { useEffect, useRef } from 'react'
+import { useRootStore } from 'src/stores'
+import _Bookmarks from '../../Bookmarks/Bookmarks'
+import ToggleButtons from 'src/ui/core/components/mui/inputs/ToggleButtons/ToggleButtons'
+import Footer from 'src/ui/core/components/Footer/Footer'
+import { action } from 'mobx'
+import moment from 'moment'
+import uniqid from 'uniqid'
+import { useRTCViewer } from 'src/hooks/useRTCViewer'
+import Timestamp from 'src/ui/core/components/cells/CellTimestamp/CellTimestamp'
 
 function VideoPlayerView({ state, onClickClose, onClickAddBookmarkOrNote }: any) {
-  const { modalStore } = useRootStore();
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const { modalStore } = useRootStore()
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useRTCViewer(
     {
+      // @ts-ignore
       channelName: 'craa-kvs-202203',
+      // @ts-ignore
       region: process.env.AWS_REGION, // Use environment variable
+      // @ts-ignore
       accessKeyId: process.env.AWS_ACCESS_KEY_ID, // Use environment variable
+      // @ts-ignore
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY, // Use environment variable
     },
     videoRef
-  );
+  )
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current?.addEventListener('loadedmetadata', function () {
         if (videoRef.current?.duration == Infinity) {
-          videoRef.current.currentTime = 1e101;
+          videoRef.current.currentTime = 1e101
           videoRef.current.ontimeupdate = function () {
             this.ontimeupdate = () => {
-              return;
-            };
-            if (videoRef.current) {
-              videoRef.current.currentTime = 0;
-              return;
+              return
             }
-          };
+            if (videoRef.current) {
+              videoRef.current.currentTime = 0
+              return
+            }
+          }
         }
-      });
+      })
     }
-  }, [videoRef]);
+  }, [videoRef])
 
   const colums = [
     {
@@ -63,7 +67,7 @@ function VideoPlayerView({ state, onClickClose, onClickAddBookmarkOrNote }: any)
       accessor: 'timestamp',
       Cell: Timestamp,
     },
-  ];
+  ]
 
   const items = [
     {
@@ -78,13 +82,13 @@ function VideoPlayerView({ state, onClickClose, onClickAddBookmarkOrNote }: any)
       text: 'BOOKMARKS',
       value: 'BOOKMARK',
     },
-  ];
+  ]
 
-  const trainingRoom = state.trainingRoom;
+  const trainingRoom = state.trainingRoom
 
-  const bookmarks = trainingRoom.bookmarks?.filter((bookmark: any) => bookmark.kind === 'bookmark');
+  const bookmarks = trainingRoom.bookmarks?.filter((bookmark: any) => bookmark.kind === 'bookmark')
 
-  const notes = trainingRoom.bookmarks?.filter((bookmark: any) => bookmark.kind === 'note');
+  const notes = trainingRoom.bookmarks?.filter((bookmark: any) => bookmark.kind === 'note')
 
   const toggleButton = (
     <Box sx={{ display: 'flex', flex: 1 }}>
@@ -102,9 +106,9 @@ function VideoPlayerView({ state, onClickClose, onClickAddBookmarkOrNote }: any)
         ADD A BOOKMARK
       </ButtonBase>
     </Box>
-  );
+  )
 
-  let src = state.trainingRoom.screenRecords[0].url;
+  let src = state.trainingRoom.screenRecords[0].url
 
   return (
     <Box
@@ -174,14 +178,13 @@ function VideoPlayerView({ state, onClickClose, onClickAddBookmarkOrNote }: any)
       </Grid>
       <Footer light />
     </Box>
-  );
+  )
 }
-
-export default observer(VideoPlayerView);
+export default observer(VideoPlayerView)
 
 const SimpleDataGrid = observer(({ data }: any) => {
   const renderRow = (item: any, index: number) => {
-    const isEven = (index + 1) % 2 === 0;
+    const isEven = (index + 1) % 2 === 0
 
     let sx: any = {
       flex: '1 1 52px',
@@ -189,20 +192,20 @@ const SimpleDataGrid = observer(({ data }: any) => {
       alignItems: 'center',
       justifyContent: 'space-between',
       px: 1,
-    };
+    }
     if (isEven) {
       sx = {
         bgcolor: '#E5E5E5',
         ...sx,
-      };
+      }
     }
 
     const onClick = (item: any) => {
       // if (videoStore.video && videoStore.video.current && item.timestamp) {
-      //   videoStore.video.current.currentTime = item.timestamp;
-      //   videoStore.video.current.play();
+      //   videoStore.video.current.currentTime = item.timestamp
+      //   videoStore.video.current.play()
       // }
-    };
+    }
 
     return (
       <Box key={uniqid()} sx={sx}>
@@ -215,12 +218,12 @@ const SimpleDataGrid = observer(({ data }: any) => {
           </Button>
         </Typography>
       </Box>
-    );
-  };
+    )
+  }
 
   return (
     <Box sx={{ flex: 1, flexDirection: 'column', display: 'flex', mt: 2 }}>
       {data?.map(renderRow)}
     </Box>
-  );
-});
+  )
+})
