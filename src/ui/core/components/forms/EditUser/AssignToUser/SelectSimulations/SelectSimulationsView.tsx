@@ -205,7 +205,7 @@ function SelectSimulationsView(props: Props) {
                       <td
                         style={{
                           fontSize: '16px',
-                          fontWeight: '600',
+                          fontWeight: "bold",
                           paddingRight: '24px',
                         }}
                       >
