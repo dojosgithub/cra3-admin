@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": false, 
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -25,11 +25,10 @@
       "@hooks": ["src/hooks/index.ts"],
       "@utils": ["src/utils/index.ts"]
     },
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "noEmitOnError": false,
-    "suppressImplicitAnyIndexErrors": true 
+    "typeRoots": ["./node_modules/@types", "./src/types"], // Include custom types
+    "noEmitOnError": false
   },
-  "include": ["src"],
+  "include": ["src", "global.d.ts"], // Include global.d.ts
   "exclude": ["node_modules", "dist", "build"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
