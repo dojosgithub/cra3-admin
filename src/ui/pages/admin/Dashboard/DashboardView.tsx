@@ -111,7 +111,6 @@ function DashboardView(props: any) {
             <Select
               fullWidth
               size="small"
-              placeholder="Select vendor"
               className="whiteSelect"
               onChange={(e: any) => {
                 if (e.target.value === pfizerId) {
@@ -121,18 +120,22 @@ function DashboardView(props: any) {
               }}
               value={clientUnitId}
             >
+
               {clientUnits
                 ?.filter(
                   (el: any) => el.vendor === '' || el.vendor === undefined
                 )
-                ?.map((client: any) => (
+                ?.map((client: any) => (<>
+                  <MenuItem value="" disabled>
+                    Select vendor
+                  </MenuItem>
                   <MenuItem value={client._id}>{client.name}</MenuItem>
-                ))}
+                </>))}
             </Select>
           </Grid>
           {clientUnitId !== '' ? (
             clientUnitId ===
-            clientUnits.find((el: any) => el.name === 'Pfizer')._id ? (
+              clientUnits.find((el: any) => el.name === 'Pfizer')._id ? (
               <Grid
                 item
                 xs={2.3}
@@ -152,13 +155,16 @@ function DashboardView(props: any) {
                 <Select
                   fullWidth
                   size="small"
-                  placeholder="Select vendor"
+
                   className="whiteSelect"
                   onChange={(e: any) => {
                     setVendorId(e.target.value)
                   }}
                   value={vendorId}
                 >
+                  <MenuItem value="" disabled>
+                    Select vendor
+                  </MenuItem>
                   <MenuItem value={'all'}>All</MenuItem>
                   {clientUnits
                     ?.filter(
@@ -192,7 +198,6 @@ function DashboardView(props: any) {
                 <Select
                   fullWidth
                   size="small"
-                  placeholder="Select vendor"
                   className="whiteSelect"
                   onChange={(e: any) => {
                     setBusinessUnitId(e.target.value)
@@ -200,9 +205,12 @@ function DashboardView(props: any) {
                 >
                   {clientUnits
                     ?.find((el: any) => el._id === clientUnitId)
-                    ?.businessUnits?.map((bu: any) => (
+                    ?.businessUnits?.map((bu: any) => (<>
+                      <MenuItem value="" disabled>
+                        Select vendor
+                      </MenuItem>
                       <MenuItem value={bu._id}>{bu.name}</MenuItem>
-                    ))}
+                    </>))}
                 </Select>
               </Grid>
             )

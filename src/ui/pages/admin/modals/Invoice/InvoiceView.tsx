@@ -1,7 +1,7 @@
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
 import { Box, Checkbox, Select, TextField } from 'src/ui/core/components'
 import { Button, FormLabel, Stack } from '@mui/material'
-import { CalendarPicker, LocalizationProvider } from '@mui/x-date-pickers'
+import { DateCalendar, DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import DetailLayout from 'src/ui/layouts/DetailLayout/DetailLayout'
@@ -104,18 +104,17 @@ function InvoiceView(props: any) {
       </Box>
       {/* @ts-ignore */}
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <CalendarPicker
-          disablePast
-          views={['month', 'year']}
-          view={currentView}
-          date={dayjs(invoicedDate)}
-          onChange={(date, selectionState) => {
-            if (!date) return
-            setInvoicedDate(date.toDate())
-          }}
-          onYearChange={() => setCurrentView('month')}
-        />
-      </LocalizationProvider>
+      <DatePicker
+        disablePast
+        views={['year', 'month']} // Allows year and month selection
+        value={invoicedDate}
+        onChange={(date: any) => {
+          if (!date) return;
+          setInvoicedDate(date);
+        }}
+        onYearChange={() => setCurrentView('month')}
+      />
+    </LocalizationProvider>
     </Box>
   )
 }

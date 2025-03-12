@@ -172,47 +172,41 @@ function InvoiceManagementView(props: any) {
           <Typography>Invoiced from</Typography>
           {/* @ts-ignore */}
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DesktopDatePicker
-              views={['year', 'month']}
-              inputFormat="MMM YYYY"
-              value={fromValue}
-              onChange={handleChangeFromValue}
-              renderInput={(params) => {
-                return (
-                  <TextField
-                    {...params}
-                    sx={{
-                      width: '140px',
-                      '& input': {
-                        fontSize: '13px!important',
-                      },
-                    }}
-                    size="small"
-                  />
-                )
-              }}
-            />
+          <DesktopDatePicker
+        views={['year', 'month']}
+        format="MMM YYYY"
+        value={fromValue}
+        onChange={handleChangeFromValue}
+        slotProps={{
+          textField: {
+            size: 'small',
+            sx: {
+              width: '140px',
+              '& input': {
+                fontSize: '13px!important',
+              },
+            },
+          },
+        }}
+      />
             <Typography>to</Typography>
             <DesktopDatePicker
-              views={['year', 'month']}
-              inputFormat="MMM YYYY"
-              value={toValue}
-              onChange={handleChangeToValue}
-              renderInput={(params) => {
-                return (
-                  <TextField
-                    {...params}
-                    sx={{
-                      width: '140px',
-                      '& input': {
-                        fontSize: '13px!important',
-                      },
-                    }}
-                    size="small"
-                  />
-                )
-              }}
-            />
+        views={['year', 'month']}
+        format="MMM YYYY"
+        value={toValue}
+        onChange={handleChangeToValue}
+        slotProps={{
+          textField: {
+            size: 'small',
+            sx: {
+              width: '140px',
+              '& input': {
+                fontSize: '13px!important',
+              },
+            },
+          },
+        }}
+      />
           </LocalizationProvider>
           <Button
             variant="contained"

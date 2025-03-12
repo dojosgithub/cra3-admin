@@ -11,6 +11,7 @@ import _ from 'lodash'
 import { Option, TransferListProps } from './TransferList'
 import { reaction, toJS } from 'mobx'
 import { MobxUtil } from '@utils'
+import { ListItemButton } from '@mui/material'
 
 type LocalState = {
   options: Option[]
@@ -76,30 +77,27 @@ function TransferList(props: TransferListProps) {
   }
 
   const customList = (options: Option[]) => {
-    
+
     return (
       <Paper sx={{ width: 200, height: 230, overflow: 'auto' }}>
         <List dense component="div" role="list">
           {options.map((option: Option) => {
             const labelId = `transfer-list-item-${option.value}-label`
             return (
-              <ListItem
-                key={option.value}
-                role="listitem"
-                button
-                onClick={() => onClickCheckbox(option)}
-              >
-                <ListItemIcon>
-                  <Checkbox
-                    checked={option.checked}
-                    tabIndex={-1}
-                    disableRipple
-                    inputProps={{
-                      'aria-labelledby': labelId,
-                    }}
-                  />
-                </ListItemIcon>
-                <ListItemText id={labelId} primary={option.text} />
+              <ListItem key={option.value} role="listitem">
+                <ListItemButton onClick={() => onClickCheckbox(option)}>
+                  <ListItemIcon>
+                    <Checkbox
+                      checked={option.checked}
+                      tabIndex={-1}
+                      disableRipple
+                      inputProps={{
+                        'aria-labelledby': labelId,
+                      }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText id={labelId} primary={option.text} />
+                </ListItemButton>
               </ListItem>
             )
           })}
