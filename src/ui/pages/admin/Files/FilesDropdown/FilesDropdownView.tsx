@@ -63,7 +63,7 @@ function FilesDropdownView({
       {...getRootProps()}
     >
       <input id="hidden-file-input" {...getInputProps()} multiple style={{ display: 'none' }} />
-      <input id="hidden-folder-input" {...getInputProps()} multiple webkitdirectory="" style={{ display: 'none' }} />
+      <input id="hidden-folder-input" {...getInputProps() as any} multiple webkitdirectory="" style={{ display: 'none' }} />
       <input {...getInputProps()} multiple  />
       {folders.length === 0 ? null : pdfViewType.type === 'grid' ? (
         <Box>

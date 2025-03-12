@@ -4,6 +4,7 @@ import { IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useRootStore } from 'src/stores'
 import ProfileCard from 'src/ui/core/components/ProfileCard/ProfileCard'
+import { ElementType } from 'react'
 
 function AppBarView() {
   const {
@@ -40,7 +41,7 @@ function AppBarView() {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div" color={'white'}>
+        <Typography variant="h6" noWrap component={'div' as ElementType}color={'white'}>
           CRA Assessments
         </Typography>
       </Box>

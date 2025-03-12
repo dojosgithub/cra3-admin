@@ -15,7 +15,7 @@ class Alert {
     else if (type === 'warning') defaultOptions.title = 'Warning'
 
     const _options = { ...defaultOptions, ...options }
-    Swal.fire(_options)
+    Swal.fire(_options as any)
   }
 
   static handle(error: unknown): void {
@@ -44,7 +44,7 @@ class Alert {
 
     const _options = { ...defaultOptions, ...options }
 
-    Swal.fire(_options)
+    Swal.fire(_options as any)
   }
 }
 

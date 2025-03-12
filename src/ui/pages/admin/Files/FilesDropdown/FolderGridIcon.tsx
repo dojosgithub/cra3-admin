@@ -59,7 +59,7 @@ export const FolderGridIcon = ({ folder, onAddFolderPath, mutate }: Props) => {
         }}
         {...getRootProps()}
       >
-        <input {...getInputProps()} multiple webkitdirectory="" />
+       <input {...(getInputProps() as any)} multiple webkitdirectory="" />
         <Box
           sx={{
             width: 56,

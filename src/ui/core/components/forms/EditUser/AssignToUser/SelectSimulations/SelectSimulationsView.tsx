@@ -205,7 +205,7 @@ function SelectSimulationsView(props: Props) {
                       <td
                         style={{
                           fontSize: '16px',
-                          fontWeight: '600',
+                          fontWeight: 600,
                           paddingRight: '24px',
                         }}
                       >
@@ -223,7 +223,7 @@ function SelectSimulationsView(props: Props) {
                       <td
                         style={{
                           fontSize: '16px',
-                          fontWeight: '600',
+                          fontWeight: 600,
                           paddingRight: '24px',
                           paddingTop: '0.2rem',
                         }}
@@ -242,7 +242,7 @@ function SelectSimulationsView(props: Props) {
                       <td
                         style={{
                           fontSize: '16px',
-                          fontWeight: '600',
+                          fontWeight: 600,
                           paddingRight: '24px',
                           paddingTop: '0.2rem',
                         }}
@@ -264,7 +264,7 @@ function SelectSimulationsView(props: Props) {
                       <td
                         style={{
                           fontSize: '16px',
-                          fontWeight: '600',
+                          fontWeight: 600,
                           paddingRight: '24px',
                           paddingTop: '0.2rem',
                         }}
@@ -283,7 +283,7 @@ function SelectSimulationsView(props: Props) {
                       <td
                         style={{
                           fontSize: '16px',
-                          fontWeight: '600',
+                          fontWeight: 600,
                           paddingTop: '0.2rem',
                           paddingRight: '24px',
                         }}

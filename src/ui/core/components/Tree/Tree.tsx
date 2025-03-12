@@ -2,7 +2,8 @@ import * as React from 'react';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import { alpha, styled } from '@mui/material/styles';
 import TreeView from '@mui/lab/TreeView';
-import TreeItem, { TreeItemProps, treeItemClasses } from '@mui/lab/TreeItem';
+import TreeItem, { TreeItemProps } from '@mui/lab/TreeItem';
+import { treeItemClasses } from '@mui/x-tree-view';
 import Collapse from '@mui/material/Collapse';
 // web.cjs is required for IE11 support
 import { useSpring, animated } from 'react-spring';
@@ -67,12 +68,12 @@ const StyledTreeItem = styled((props: TreeItemProps) => (
       opacity: 0.3,
     },
   },
-  [`& .${treeItemClasses.group}`]: {
+  [`& .${'treeItemClasses-group'}`]: {
     marginLeft: 15,
     paddingLeft: 18,
     borderLeft: `1px dashed ${alpha(theme.palette.text.primary, 0.4)}`,
   },
-}));
+})) as React.ComponentType<TreeItemProps>;;
 
 export default function CustomizedTreeView() {
   return (
