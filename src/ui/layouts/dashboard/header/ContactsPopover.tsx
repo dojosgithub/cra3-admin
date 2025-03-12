@@ -91,10 +91,10 @@ export default function ContactsPopover() {
             onClick={() => {
               if (process.env.NODE_ENV === 'production') {
                 window.location.replace(
-                  'https://craa-app-dev-3.hoansoft.com/home'
+                  'https://cra3-user.vercel.app/home'
                 )
               } else {
-                window.location.replace('http://localhost:3000/home')
+                window.location.replace('https://cra3-user.vercel.app/home')
               }
             }}
           >

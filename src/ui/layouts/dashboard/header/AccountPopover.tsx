@@ -146,10 +146,10 @@ export default function AccountPopover() {
             const mode = import.meta.env.MODE
             if (mode === 'production') {
               window.location.replace(
-                'https://craa-app-dev-3.hoansoft.com/auth/signin'
+                'https://cra3-user.vercel.app/auth/signin'
               )
             } else {
-              window.location.replace('http://localhost:3000/auth/signin')
+              window.location.replace('https://cra3-user.vercel.app/auth/signin')
             }
           }}
           sx={{ m: 1 }}

@@ -131,8 +131,8 @@ export default class AuthStore implements IStore {
       if (role === 'SimUser') {
         window.location.href =
           mode === 'production'
-            ? 'https://craa-app-dev-3.hoansoft.com/home'
-            : 'http://localhost:3000/home'
+            ? 'https://cra3-user.vercel.app/home'
+            : 'https://cra3-user.vercel.app/home'
       } else if (
         role === 'SuperAdmin' ||
         role === 'Admin' ||
@@ -272,9 +272,9 @@ export default class AuthStore implements IStore {
     // this.rootStore.routerStore.go('/auth/signin')
     const mode = import.meta.env.MODE
     if (mode === 'production') {
-      window.location.replace('https://craa-app-dev-3.hoansoft.com/auth/signin')
+      window.location.replace('https://cra3-user.vercel.app/auth/signin')
     } else {
-      window.location.replace('http://localhost:3000/auth/signin')
+      window.location.replace('https://cra3-user.vercel.app/auth/signin')
     }
   }
 
@@ -301,9 +301,9 @@ export default class AuthStore implements IStore {
     // this.rootStore.routerStore.router &&
     //   this.rootStore.routerStore.router('/auth/signin')
     if (mode === 'production') {
-      window.location.replace('https://craa-app-dev-3.hoansoft.com/auth/signin')
+      window.location.replace('https://cra3-user.vercel.app/auth/signin')
     } else {
-      window.location.replace('http://localhost:3000/auth/signin')
+      window.location.replace('https://cra3-user.vercel.app/auth/signin')
     }
 
     this.rootStore.authStore.user = null
