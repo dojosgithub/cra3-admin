@@ -228,25 +228,22 @@ const withColumns = (WrappedComponent: any) =>
               >
                 {/* @ts-ignore */}
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DesktopDatePicker
-                    inputFormat="MM/DD/YYYY"
-                    value={value}
-                    onChange={handleChange}
-                    renderInput={(params) => {
-                      return (
-                        <TextField
-                          {...params}
-                          sx={{
-                            width: '140px',
-                            '& input': {
-                              fontSize: '13px!important',
-                            },
-                          }}
-                          size="small"
-                        />
-                      )
-                    }}
-                  />{' '}
+                <DesktopDatePicker
+  format="MM/DD/YYYY"
+  value={value}
+  onChange={handleChange}
+  slotProps={{
+    textField: {
+      sx: {
+        width: '140px',
+        '& input': {
+          fontSize: '13px!important',
+        },
+      },
+      size: 'small',
+    },
+  }}
+/>
                 </LocalizationProvider>
               </Box>
               <Box
@@ -344,7 +341,7 @@ const withColumns = (WrappedComponent: any) =>
                 },
                 update: {
                   $set: {
-                    aliasEmails: aliasEmailsString.split(',' || ';'),
+                    aliasEmails: aliasEmailsString.split(/[;,]/),
                   },
                 },
               })

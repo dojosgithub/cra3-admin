@@ -5,7 +5,7 @@ import {
 } from 'src/ui/core/components/DataGrid/DataGrid'
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
 import { Box, Button, Checkbox, Modal } from '@mui/material'
-import { CalendarPicker, LocalizationProvider } from '@mui/x-date-pickers'
+import { DateCalendar, LocalizationProvider } from '@mui/x-date-pickers'
 import { useEffect, useState } from 'react'
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -195,12 +195,12 @@ const withColumns = (WrappedComponent: any) =>
                     </Button>
                   </Box>
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <CalendarPicker
+                    <DateCalendar
                       disablePast
                       views={['month', 'year']}
                       view={currentView}
-                      date={dayjs(invoicedDate)}
-                      onChange={(date, selectionState) => {
+                      value={dayjs(invoicedDate)} // Use `value` instead of `date`
+                      onChange={(date: any) => {
                         if (!date) return
                         setInvoicedDate(date.toDate())
                       }}

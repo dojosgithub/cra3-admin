@@ -1,7 +1,7 @@
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
 import { Box, Checkbox, Select, TextField } from 'src/ui/core/components'
 import { Button, FormLabel, Stack } from '@mui/material'
-import { DateCalendar, DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
+import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import DetailLayout from 'src/ui/layouts/DetailLayout/DetailLayout'

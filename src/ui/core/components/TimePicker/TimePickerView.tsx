@@ -1,33 +1,35 @@
-import { observer, useLocalObservable } from 'mobx-react'
+import { observer, useLocalObservable } from 'mobx-react';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import TextField from '@mui/material/TextField';
+import dayjs, { Dayjs } from 'dayjs';
 
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import TextField from '@mui/material/TextField'
-import { TimePicker } from '@mui/x-date-pickers/TimePicker'
+function TimePickerView() {
+  const timePicker = useLocalObservable(() => ({
+    date: null as Dayjs | null,
+  }));
 
-// InPregress
-function TimePickerView(props: any) {
-  const timePicker: { date: Date | null } = useLocalObservable(() => ({
-    date: null,
-  }))
-
-  const onChange: (
-    date: Date | null,
-    keyboardInputValue?: string | undefined
-  ) => void = (date, keyboardInputValue) => {
-    timePicker.date = date
-  }
+  const onChange = (newValue: Dayjs | null) => {
+    timePicker.date = newValue;
+  };
 
   return (
-    //@ts-ignore
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TimePicker
-        label="Basic example"
+        label="Select Time"
         value={timePicker.date}
         onChange={onChange}
-        renderInput={(params) => <TextField {...params} />}
+        slotProps={{
+          textField: {
+            component: TextField, // This is optional, but ensures the correct input field
+            fullWidth: true,
+            size: 'small',
+          },
+        }}
       />
     </LocalizationProvider>
-  )
+  );
 }
-export default observer(TimePickerView)
+
+export default observer(TimePickerView);
