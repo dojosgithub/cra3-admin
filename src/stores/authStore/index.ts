@@ -141,12 +141,12 @@ export default class AuthStore implements IStore {
         // window.location.href = 'https://craa-admin-dev-3.hoansoft.com/';
         window.location.href =
           mode === 'production'
-            ? 'https://craa-admin-dev-3.hoansoft.com/'
+            ? 'https://cra3-admin.vercel.app/   '
             : 'http://localhost:3001/'
       } else if (role === 'ClientSubAdmin' || role === 'ClientAdmin') {
         window.location.href =
           mode === 'production'
-            ? 'https://craa-client-dev-3.hoansoft.com/'
+            ? 'https://cra3-client.vercel.app/'
             : 'http://localhost:3002/'
       }
     } catch (error: unknown) {
@@ -181,9 +181,9 @@ export default class AuthStore implements IStore {
       const { accessToken, refreshToken, role, user_id } = res!.data
 
       if (mode === 'production') {
-        setCookies('accessToken', accessToken, { domain: '.hoansoft.com' })
-        setCookies('refreshToken', refreshToken, { domain: '.hoansoft.com' })
-        setCookies('role', role, { domain: '.hoansoft.com' })
+        setCookies('accessToken', accessToken, { domain: '.vercel.app' })
+        setCookies('refreshToken', refreshToken, { domain: '.vercel.app' })
+        setCookies('role', role, { domain: '.vercel.app' })
       } else {
         setCookies('accessToken', accessToken)
         setCookies('refreshToken', refreshToken)
@@ -203,11 +203,11 @@ export default class AuthStore implements IStore {
         // window.location.href = 'https://craa-admin-dev-3.hoansoft.com/';
         window.location.href =
           mode === 'production'
-            ? 'https://craa-admin-dev-3.hoansoft.com/'
+            ? 'https://cra3-admin.vercel.app/'
             : 'http://localhost:3001/'
       } else if (role === 'ClientSubAdmin' || role === 'ClientAdmin') {
         window.location.href = 'production'
-          ? 'https://craa-client-dev-3.hoansoft.com/'
+          ? 'https://cra3-client.vercel.app/'
           : 'http://localhost:3002/'
       }
     } catch (error) {

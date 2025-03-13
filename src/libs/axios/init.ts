@@ -2,9 +2,9 @@ import axios from 'axios'
 
 const mode = import.meta.env.MODE
 if (mode === 'production')
-  axios.defaults.baseURL = 'https://craa-api-dev-3.hoansoft.com'
+  axios.defaults.baseURL = 'https://cra3-server-eff4381ce898.herokuapp.com'
 else if (mode === 'staging')
-  axios.defaults.baseURL = 'https://craa-api-dev-3.hoansoft.com'
+  axios.defaults.baseURL = 'https://cra3-server-eff4381ce898.herokuapp.com'
 else axios.defaults.baseURL = 'http://localhost:4000'
 
 axios.interceptors.response.use(

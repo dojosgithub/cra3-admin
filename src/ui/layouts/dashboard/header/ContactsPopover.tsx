@@ -103,7 +103,7 @@ export default function ContactsPopover() {
           <MenuItem
             onClick={() => {
               if (process.env.NODE_ENV === 'production') {
-                window.location.replace('https://craa-client-dev-3.hoansoft.com')
+                window.location.replace('https://cra3-client.vercel.app')
               } else {
                 window.location.replace('http://localhost:3002')
               }

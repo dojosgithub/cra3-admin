@@ -109,7 +109,7 @@ const withColumns: WrappingFunction = (WrappedComponent) =>
 
           let url = `http://localhost:4000/v3/excel/notes/${cellProps.row.original._id}`
           if (process.env.NODE_ENV === 'production') {
-            url = `https://craa-api-dev-3.hoansoft.com/v3/excel/notes/${cellProps.row.original._id}`
+            url = `https://cra3-server-eff4381ce898.herokuapp.com/v3/excel/notes/${cellProps.row.original._id}`
           }
           return (
             <a className="link" href={url}>
@@ -139,7 +139,7 @@ const withColumns: WrappingFunction = (WrappedComponent) =>
 
           let url = `http://localhost:4000/v3/excel/userLogs/${cellProps.row.original._id}`
           if (process.env.NODE_ENV === 'production') {
-            url = `https://craa-api-dev-3.hoansoft.com/v3/excel/userLogs/${cellProps.row.original._id}`
+            url = `https://cra3-server-eff4381ce898.herokuapp.com/v3/excel/userLogs/${cellProps.row.original._id}`
           }
 
           return (
@@ -170,7 +170,7 @@ const withColumns: WrappingFunction = (WrappedComponent) =>
 
           let url = `http://localhost:4000/v3/excel/trainingLogs/${cellProps.row.original._id}`
           if (process.env.NODE_ENV === 'production') {
-            url = `https://craa-api-dev-3.hoansoft.com/v3/excel/trainingLogs/${cellProps.row.original._id}`
+            url = `https://cra3-server-eff4381ce898.herokuapp.com/v3/excel/trainingLogs/${cellProps.row.original._id}`
           }
 
           return (
