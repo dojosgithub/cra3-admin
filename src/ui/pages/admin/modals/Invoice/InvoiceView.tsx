@@ -107,7 +107,7 @@ function InvoiceView(props: any) {
       <DatePicker
         disablePast
         views={['year', 'month']} // Allows year and month selection
-        value={invoicedDate}
+        value={invoicedDate ? dayjs(invoicedDate) : null} 
         onChange={(date: any) => {
           if (!date) return;
           setInvoicedDate(date);

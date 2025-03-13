@@ -5,13 +5,12 @@ import {
 } from 'src/ui/core/components/DataGrid/DataGrid'
 import { ArrowBackIos, ArrowForwardIos, ArrowLeft } from '@mui/icons-material'
 import { Box, Button, Checkbox, Modal } from '@mui/material'
-import { CalendarPicker, LocalizationProvider } from '@mui/x-date-pickers'
+import { DateCalendar, LocalizationProvider } from '@mui/x-date-pickers'
 import { useEffect, useState } from 'react'
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { CellProps } from 'react-table'
 import DeleteDialogue from '@components/DeleteDialogue/DeleteDialogue'
-import { PickerSelectionState } from '@mui/x-date-pickers/internals/hooks/usePickerState'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import { highlightedText } from 'src/utils/highlightedText'
@@ -234,12 +233,12 @@ const withColumns = (WrappedComponent: any) =>
                   </Box>
                   {/* @ts-ignore */}
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <CalendarPicker
+                    <DateCalendar
                       disablePast
                       views={['month', 'year']}
                       view={currentView}
-                      date={dayjs(invoicedDate)}
-                      onChange={(date, selectionState) => {
+                      value={dayjs(invoicedDate)}
+                      onChange={(date : any) => {
                         if (!date) return
                         setInvoicedDate(date.toDate())
                       }}
@@ -252,15 +251,13 @@ const withColumns = (WrappedComponent: any) =>
                 open={revokeDialogueOpen}
                 handleClose={() => setRevokeDialogueOpen(false)}
                 onDelete={onClickRevoke}
-                title={`Are you sure you want to revoke the invoice of ${
-                  userName
-                    ? `"${
-                        userName.length > 20
-                          ? userName.substring(0, 20) + '...'
-                          : userName
-                      }"`
+                title={`Are you sure you want to revoke the invoice of ${userName
+                    ? `"${userName.length > 20
+                      ? userName.substring(0, 20) + '...'
+                      : userName
+                    }"`
                     : 'this user'
-                }?`}
+                  }?`}
                 text={
                   "This item will be revoked permanently. You can't undo this action."
                 }

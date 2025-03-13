@@ -31,7 +31,7 @@ export default function ColorPreview({ colors, limit = 3, sx }: Props) {
   const moreColor = colors.length - limit;
 
   return (
-    <RootStyle component="span" sx={sx}>
+    <RootStyle  sx={sx}>
       {showColor.map((color, index) => (
         <IconStyle key={color + index} sx={{ bgcolor: color }} />
       ))}

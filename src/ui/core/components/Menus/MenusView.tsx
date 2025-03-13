@@ -14,7 +14,7 @@ function MenusView({ state }: any) {
         return (
           <div key={uniqid()}>
             <ListItem
-              button
+             component='button'
               onClick={action(() => {
                 menu.isOpen = !menu.isOpen
                 if (menu.onClick) {

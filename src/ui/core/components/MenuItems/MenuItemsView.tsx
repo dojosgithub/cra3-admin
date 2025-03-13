@@ -11,6 +11,7 @@ function MenuItemsView({ items, isOpen }: any) {
       <List component="div" disablePadding>
         {items.map((item: Menu) => (
           <ListItem
+          component="button"
             sx={{ pl: 4, height: 40 }}
             onClick={() => {
               items.forEach((_item: any) => {
@@ -26,7 +27,7 @@ function MenuItemsView({ items, isOpen }: any) {
               }
             }}
             key={uniqid()}
-            button
+           
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText>

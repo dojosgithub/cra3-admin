@@ -44,7 +44,7 @@ function DateTimePickerView(props: any) {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateTimePicker
         {...props}
-        renderInput={(props) => <TextField {...props} fullWidth size="small" />}
+        renderInput={(props: any) => <TextField {...props} fullWidth size="small" />}
         value={localState.value}
         onChange={onChange}
         onClose={onClose}
