@@ -14,6 +14,8 @@ function AdminLayoutView({}: any) {
   } = useRootStore()
   const isDrawerOpen = adminLayout.isDrawerOpen
   const { data: user, isValidating } = useUser()
+  console.log('RUNNING')
+  console.log('USER', user)
   const nav = useNavigate()
   const location = useLocation()
   useEffect(() => {
