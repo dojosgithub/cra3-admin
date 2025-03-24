@@ -26,7 +26,7 @@ function AdminLayoutView({}: any) {
         const mode = import.meta.env.MODE
         if (mode === 'production') {
           window.location.replace(
-            'https://cra3-user.vercel.app/auth/signin'
+            'https://cra3-admin.vercel.app/'  //checking
           )
         } else {
           window.location.replace('http://localhost:3000/auth/signin')
