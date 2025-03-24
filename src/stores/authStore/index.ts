@@ -116,9 +116,9 @@ export default class AuthStore implements IStore {
       console.log('res>>>', res)
 
       if (mode === 'production') {
-        setCookies('accessToken', accessToken, { domain: '.hoansoft.com' })
-        setCookies('refreshToken', refreshToken, { domain: '.hoansoft.com' })
-        setCookies('role', role, { domain: '.hoansoft.com' })
+        setCookies('accessToken', accessToken, { domain: '.vercel.app' })
+        setCookies('refreshToken', refreshToken, { domain: '.vercel.app' })
+        setCookies('role', role, { domain: '.vercel.app' })
       } else {
         setCookies('accessToken', accessToken)
         setCookies('refreshToken', refreshToken)
@@ -132,22 +132,21 @@ export default class AuthStore implements IStore {
         window.location.href =
           mode === 'production'
             ? 'https://cra3-user.vercel.app/home'
-            : 'https://cra3-user.vercel.app/home'
+            : 'http://localhost:3000/home'
       } else if (
         role === 'SuperAdmin' ||
         role === 'Admin' ||
         role === 'SimScorer'
       ) {
-        // window.location.href = 'https://craa-admin-dev-3.hoansoft.com/';
         window.location.href =
           mode === 'production'
-            ? 'https://cra3-admin.vercel.app/   '
+            ? 'https://cra3-admin.vercel.app/'
             : 'http://localhost:3001/'
       } else if (role === 'ClientSubAdmin' || role === 'ClientAdmin') {
         window.location.href =
           mode === 'production'
             ? 'https://cra3-client.vercel.app/'
-            : 'http://localhost:3002/'
+            : 'http://localhost:3002/'           
       }
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
@@ -206,7 +205,8 @@ export default class AuthStore implements IStore {
             ? 'https://cra3-admin.vercel.app/'
             : 'http://localhost:3001/'
       } else if (role === 'ClientSubAdmin' || role === 'ClientAdmin') {
-        window.location.href = 'production'
+        window.location.href 
+         mode === 'production'
           ? 'https://cra3-client.vercel.app/'
           : 'http://localhost:3002/'
       }
@@ -274,7 +274,7 @@ export default class AuthStore implements IStore {
     if (mode === 'production') {
       window.location.replace('https://cra3-user.vercel.app/auth/signin')
     } else {
-      window.location.replace('https://cra3-user.vercel.app/auth/signin')
+      window.location.replace('http://localhost:3000/auth/signin')
     }
   }
 
@@ -303,7 +303,7 @@ export default class AuthStore implements IStore {
     if (mode === 'production') {
       window.location.replace('https://cra3-user.vercel.app/auth/signin')
     } else {
-      window.location.replace('https://cra3-user.vercel.app/auth/signin')
+      window.location.replace('http://localhost:3000/auth/signin')
     }
 
     this.rootStore.authStore.user = null

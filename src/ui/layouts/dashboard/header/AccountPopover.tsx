@@ -149,7 +149,7 @@ export default function AccountPopover() {
                 'https://cra3-user.vercel.app/auth/signin'
               )
             } else {
-              window.location.replace('https://cra3-user.vercel.app/auth/signin')
+              window.location.replace('http://localhost:3000/auth/signin')
             }
           }}
           sx={{ m: 1 }}

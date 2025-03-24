@@ -94,7 +94,7 @@ export default function ContactsPopover() {
                   'https://cra3-user.vercel.app/home'
                 )
               } else {
-                window.location.replace('https://cra3-user.vercel.app/home')
+                window.location.replace('http://localhost:3000/home')
               }
             }}
           >
