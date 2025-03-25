@@ -4,6 +4,8 @@ import Checkbox from '@mui/material/Checkbox'
 import { observer } from 'mobx-react'
 
 function CheckboxComp(props: any) {
+
+  
   const checkStyle = {
     width: 'auto',
     marginRight: '2rem',
