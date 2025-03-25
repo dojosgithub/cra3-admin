@@ -110,7 +110,8 @@ export default class AuthStore implements IStore {
     let res: AxiosResponse | null = null
     try {
       res = yield axios.post('v1/auth/signin', toJS(this.signInUser))
-      const mode = process.env.NODE_ENV
+      // const mode = process.env.NODE_ENV
+       const mode = "production"
 
       const { accessToken, refreshToken, role, user_id } = res!.data
       console.log('res>>>', res)
