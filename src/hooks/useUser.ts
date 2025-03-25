@@ -24,6 +24,8 @@ function useUser() {
       )
     }
   }, [user])
+
+
   return {
     data: user,
     isLoading: !user,
