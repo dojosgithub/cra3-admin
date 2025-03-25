@@ -200,7 +200,7 @@ export default class AuthStore implements IStore {
         role === 'Admin' ||
         role === 'SimScorer'
       ) {
-        // window.location.href = 'https://craa-admin-dev-3.hoansoft.com/';
+        window.location.href = 'https://cra3-admin.vercel.app/';
         window.location.href =
           mode === 'production'
             ? 'https://cra3-admin.vercel.app/'
