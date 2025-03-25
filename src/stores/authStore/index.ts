@@ -88,9 +88,9 @@ export default class AuthStore implements IStore {
             // case RoleTitle.Admin:
             //   this.rootStore.routerStore.navigate('/admin/users')
             //   break
-            // case RoleTitle.SuperAdmin:
-            //   this.rootStore.routerStore.navigate('/admin/users')
-            //   break
+            case RoleTitle.SuperAdmin:
+              this.rootStore.routerStore.go('/admin/users')
+              break
             default:
               break
           }
