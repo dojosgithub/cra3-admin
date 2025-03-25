@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "start:dev": "vite --host",
-    "build": "tsc && NODE_OPTIONS=--max_old_space_size=4096 vite build --mode staging",
+    "build": "tsc && NODE_OPTIONS=--max_old_space_size=4096 vite build",
     "staging": "tsc && NODE_OPTIONS=--max_old_space_size=4096 vite build --mode staging",
     "preview": "vite preview --host",
     "start:prod": "vite preview --host",
