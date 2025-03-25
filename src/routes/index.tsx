@@ -75,9 +75,9 @@ export default function Router() {
     {
       path: 'admin',
       element: (
-        <AuthGuard>
+        // <AuthGuard>
           <DashboardLayout />
-        </AuthGuard>
+        // </AuthGuard>
       ),
       children: [
         {
@@ -305,6 +305,7 @@ const AuthGuard = observer((props: RoleGuardProps) => {
   const { children } = props
 
   const { data: user, isValidating } = useUser()
+  console.log('user', user)
   const { authStore } = useRootStore()
 
   if (isValidating) return null
