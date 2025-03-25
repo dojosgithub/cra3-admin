@@ -23,7 +23,7 @@ function useUser() {
         `${user?.profile?.firstName || ''} ${user?.profile?.lastName || ''}`
       )
     }
-  }, [user])
+  }, [user, authStore])
 
 
   return {
