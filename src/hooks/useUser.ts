@@ -10,7 +10,7 @@ function useUser() {
   const token = getCookie('accessToken')
 
   const { data: user, isValidating } = useSWRImmutable(
-  ['v1/auth/token', token],
+  ['https://cra3-server-eff4381ce898.herokuapp.com/v1/auth/token', token],
     fetcherWithToken
   )
 
