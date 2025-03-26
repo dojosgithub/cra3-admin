@@ -10,7 +10,7 @@ function useUser() {
   const token = getCookie('accessToken')
 
   const { data: user, isValidating } = useSWRImmutable(
-    token ? ['v1/auth/token', token] : null,
+  ['v1/auth/token', token],
     fetcherWithToken
   )
 
