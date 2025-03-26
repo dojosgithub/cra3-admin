@@ -91,7 +91,7 @@ export default function ContactsPopover() {
             onClick={() => {
               if (process.env.NODE_ENV === 'production') {
                 window.location.replace(
-                  'https://cra3-user.vercel.app/home'
+                  'https://cra-user.dojoitsolutions.com/home'
                 )
               } else {
                 window.location.replace('http://localhost:3000/home')

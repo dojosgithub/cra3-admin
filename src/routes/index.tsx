@@ -322,7 +322,7 @@ const AuthGuard = observer((props: RoleGuardProps) => {
       },
     })
     if (mode === 'production') {
-      window.location.replace('https://cra3-user.vercel.app/auth/signin')
+      window.location.replace('https://cra-user.dojoitsolutions.com/auth/signin')
     } else {
       window.location.replace('http://localhost:3000/auth/signin')
       // }
@@ -343,7 +343,7 @@ const AuthGuard = observer((props: RoleGuardProps) => {
       },
     })
     if (mode === 'production') {
-      window.location.replace('https://cra3-user.vercel.app/auth/signin')
+      window.location.replace('/auth/signin')
     } else {
       window.location.replace('http://localhost:3000/auth/signin')
     }

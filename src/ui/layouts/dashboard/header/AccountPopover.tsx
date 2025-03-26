@@ -146,7 +146,7 @@ export default function AccountPopover() {
             const mode = import.meta.env.MODE
             if (mode === 'production') {
               window.location.replace(
-                'https://cra3-user.vercel.app/auth/signin'
+                'https://cra-user.dojoitsolutions.com/auth/signin'
               )
             } else {
               window.location.replace('http://localhost:3000/auth/signin')

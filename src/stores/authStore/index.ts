@@ -117,9 +117,9 @@ export default class AuthStore implements IStore {
       console.log('res>>>', res)
 
       if (mode === 'production') {
-        setCookies('accessToken', accessToken, { domain: '.vercel.app' })
-        setCookies('refreshToken', refreshToken, { domain: '.vercel.app' })
-        setCookies('role', role, { domain: '.vercel.app' })
+        setCookies('accessToken', accessToken, { domain: '.dojoitsolutions.com' })
+        setCookies('refreshToken', refreshToken, { domain: '.dojoitsolutions.com' })
+        setCookies('role', role, { domain: '.dojoitsolutions.com' })
       } else {
         setCookies('accessToken', accessToken)
         setCookies('refreshToken', refreshToken)
@@ -132,7 +132,7 @@ export default class AuthStore implements IStore {
       if (role === 'SimUser') {
         window.location.href =
           mode === 'production'
-            ? 'https://cra3-user.vercel.app/home'
+            ? 'https://cra-user.dojoitsolutions.com/home'
             : 'http://localhost:3000/home'
       } else if (
         role === 'SuperAdmin' ||
@@ -141,7 +141,7 @@ export default class AuthStore implements IStore {
       ) {
         window.location.href =
           mode === 'production'
-            ? 'https://cra3-admin.vercel.app/'
+            ? 'https://cra-admin.dojoitsolutions.com/'
             : 'http://localhost:3001/'
       } else if (role === 'ClientSubAdmin' || role === 'ClientAdmin') {
         window.location.href =
@@ -181,9 +181,9 @@ export default class AuthStore implements IStore {
       const { accessToken, refreshToken, role, user_id } = res!.data
 
       if (mode === 'production') {
-        setCookies('accessToken', accessToken, { domain: '.vercel.app' })
-        setCookies('refreshToken', refreshToken, { domain: '.vercel.app' })
-        setCookies('role', role, { domain: '.vercel.app' })
+        setCookies('accessToken', accessToken, { domain: '.dojoitsolutions.com' })
+        setCookies('refreshToken', refreshToken, { domain: '.dojoitsolutions.com' })
+        setCookies('role', role, { domain: '.dojoitsolutions.com' })
       } else {
         setCookies('accessToken', accessToken)
         setCookies('refreshToken', refreshToken)
@@ -200,10 +200,10 @@ export default class AuthStore implements IStore {
         role === 'Admin' ||
         role === 'SimScorer'
       ) {
-        window.location.href = 'https://cra3-admin.vercel.app/';
+        window.location.href = 'https://cra-admin.dojoitsolutions.com/';
         window.location.href =
           mode === 'production'
-            ? 'https://cra3-admin.vercel.app/'
+            ? 'https://cra-admin.dojoitsolutions.com/'
             : 'http://localhost:3001/'
       } else if (role === 'ClientSubAdmin' || role === 'ClientAdmin') {
         window.location.href 
@@ -273,7 +273,7 @@ export default class AuthStore implements IStore {
     // this.rootStore.routerStore.go('/auth/signin')
     const mode = import.meta.env.MODE
     if (mode === 'production') {
-      window.location.replace('https://cra3-user.vercel.app/auth/signin')
+      window.location.replace('https://cra-user.dojoitsolutions.com/auth/signin')
     } else {
       window.location.replace('http://localhost:3000/auth/signin')
     }
@@ -302,7 +302,7 @@ export default class AuthStore implements IStore {
     // this.rootStore.routerStore.router &&
     //   this.rootStore.routerStore.router('/auth/signin')
     if (mode === 'production') {
-      window.location.replace('https://cra3-user.vercel.app/auth/signin')
+      window.location.replace('https://cra-user.dojoitsolutions.com/auth/signin')
     } else {
       window.location.replace('http://localhost:3000/auth/signin')
     }
